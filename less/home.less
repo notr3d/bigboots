@@ -1,0 +1,55 @@
+.home {
+	
+}
+.home-slider {
+	&__wrapper {
+		position: relative;
+	}
+	&__item {		
+		padding-top: 60px;
+		height: 100vh;
+		border: 1px solid #ccc;
+		background: url(img/home/slider/1.jpg) no-repeat center;
+		background-size: cover;
+		position: relative;
+	}
+	&__container {
+		position: absolute;
+		bottom: 15px;
+		left: 15px;
+		background: rgba(0, 0, 0, 0.75);
+		padding: 30px;
+		width: 600px;
+		color: #fff;
+	}
+	&__header {
+		margin: 0;
+		margin-bottom: 30px;
+	}
+	&__text {
+		margin: 0;
+		margin-bottom: 30px;
+	}
+	&__link {
+		display: inline-block;
+		padding: 15px;
+		border: 2px solid #fff;
+		color: #fff;
+		&:visited {
+			color: #eee;
+		}
+	}
+	.owl-prev, .owl-next {
+		position: absolute;
+		top: 50%;
+		color: #fff;
+		padding: 15px;
+		border: 1px solid #fff;
+	}
+	.owl-prev {
+		left: 15px;
+	}
+	.owl-next {
+		right: 15px;
+	}
+}

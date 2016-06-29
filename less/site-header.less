@@ -1,0 +1,79 @@
+.site-header {
+	border-bottom: 1px solid #ccc;
+	position: fixed;
+	background: #fff;
+	width: 100%;
+	z-index: 100000;
+	top: 0;
+	&__wrapper {
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		height: 60px;
+	}
+	&__menu {
+		padding: 0;
+		margin: 0;
+		height: 100%;
+		list-style: none;
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		justify-content: center;
+		align-content: center;
+		.menu-item {
+			a {
+				display: block;
+				padding: 15px;
+				height: 100%;
+				text-transform: uppercase;
+				text-decoration: none;
+				outline: none;
+			}
+		}
+	}
+}
+.site-logo {
+	width: 160px;
+	height: 100%;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	border-right: 1px solid #ccc;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+	outline: none;
+	padding: 5px;
+	&__img {
+		width: 40px;
+		height: 100%;
+		background: url(img/site-logo.png) no-repeat center;
+		background-size: contain;
+	}
+	&__text {
+		font-family: 'Marcellus', serif;
+		text-transform: uppercase;
+		font-size: 18px;
+	}
+}
+.site-nav {
+	flex-grow: 1;
+	height: 100%;
+	div {
+		height: 100%;
+	}
+}
+.user-info {
+	height: 100%;
+	border-left: 1px solid #ccc;
+	div {
+		height: 100%;
+	}
+}
