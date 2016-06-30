@@ -7,6 +7,8 @@
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<link href='https://fonts.googleapis.com/css?family=Marcellus' rel='stylesheet' type='text/css'>
 	<link href="https://fonts.googleapis.com/css?family=Didact+Gothic&subset=cyrillic" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700|Open+Sans:400,700&subset=cyrillic" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,700&subset=cyrillic" rel="stylesheet">
 	<link rel="stylesheet" href="<?php echo get_template_directory_uri(); ?>/css/owl.carousel.css">
 	<?php wp_head(); ?>
 </head>
@@ -18,18 +20,16 @@
 				<span class="site-logo__img"></span>
 				<span class="site-logo__text">Big boots</span>
 			</a>
-			<div class="site-nav">
-				<?php wp_nav_menu(array(
-					'theme_location' => 'site-nav',
-					'menu_class' => 'site-header__menu'
-				)); ?>
-			</div>
-			<div class="user-info">
-				<?php wp_nav_menu(array(
-					'theme_location' => 'user-info',
-					'menu_class' => 'site-header__menu'
-				)); ?>
-			</div>
+			<?php wp_nav_menu(array(
+				'theme_location' => 'site-nav',
+				'container_class' => 'site-nav',
+				'menu_class' => 'site-header__menu'
+			)); ?>
+			<?php wp_nav_menu(array(
+				'theme_location' => 'user-info',
+				'container_class' => 'user-info',
+				'menu_class' => 'site-header__menu'
+			)); ?>
 		</div>
 	</header>
 	<div class="site-content">
