@@ -1,44 +1,99 @@
 .site-header {
-	border-bottom: 1px solid #ccc;
-	//position: fixed;
-	background: #fff;
-	width: 100%;
+	position: fixed;
 	z-index: 100000;
 	top: 0;
-	&__wrapper {
+	left: 0;
+	width: 300px;
+	height: 100vh;	
+	transform: translateX(-300px);
+	&.active {
+		transform: translateX(0);
+	}
+	&__wrapper {		
 		display: -webkit-flex;
 		display: -moz-flex;
 		display: -ms-flex;
 		display: -o-flex;
 		display: flex;
-		height: 60px;
+		height: 100%;
+		flex-direction: column;
+		background: #fff;
+		position: relative;
+	}	
+	&__open {
+		width: 75px;
+		height: 75px;
+		background: @grey;
+		border: none !important;
+		box-shadow: none !important;
+		box-shadow: none;
+		padding: 0;
+		font-size: 50px;
+		font-weight: lighter;
+		color: #fff;
+		position: absolute;
+		top: 0;
+		left: 100%;
+		text-shadow: none !important;
+		&:hover {
+			background: lighten(@grey, 5%);
+		}
+		&.active {
+			background: none;
+			color: @grey;
+			transform: rotate(45deg);
+		}
 	}
 	&__menu {
 		padding: 0;
 		margin: 0;
-		height: 100%;
 		list-style: none;
-		display: -webkit-flex;
-		display: -moz-flex;
-		display: -ms-flex;
-		display: -o-flex;
-		display: flex;
-		justify-content: center;
-		align-content: center;
+		margin-bottom: 30px;
 		.menu-item {
 			a {
 				display: block;
 				padding: 15px;
-				height: 100%;
 				text-transform: uppercase;
 				text-decoration: none;
 				letter-spacing: 1px;
    				font-weight: bold;
+				color: #333;
+				font-family: 'Open Sans Condensed';
+				font-size: 30px;
+				font-weight: lighter;
+				&:hover {
+					background: @grey;
+					color: #fff;
+				}
 			}
 		}
 	}
 }
 .site-logo {
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-decoration: none;
+	outline: none;
+	height: 75px;
+	border-bottom: 1px solid #ddd;
+	&__img {
+		width: 40px;
+		height: 100%;
+		background: url(img/site-logo.png) no-repeat center;
+		background-size: contain;
+	}
+	&__text {
+		font-family: 'Marcellus', serif;
+		text-transform: uppercase;
+		font-size: 18px;
+	}
+}
+/*.site-logo {
 	width: 160px;
 	height: 100%;
 	display: -webkit-flex;
@@ -77,4 +132,4 @@
 	div {
 		height: 100%;
 	}
-}
+}*/

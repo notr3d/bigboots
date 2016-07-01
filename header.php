@@ -30,6 +30,8 @@
 				'container_class' => 'user-info',
 				'menu_class' => 'site-header__menu'
 			)); ?>
+			<!--<?php get_search_form(); ?>-->
+			<button class="site-header__open">+</button>
 		</div>
 	</header>
 	<div class="site-content">

@@ -4,10 +4,15 @@
 @import "site-footer.less";
 @import "home.less";
 @import "products.less";
+@import "product.less";
+@import "contacts.less";
 
 @m: ~ "(max-width: 767px)";
 @t: ~ "(min-width: 768px)";
 @d: ~ "(min-width: 1280px)";
+
+@red: #e44b2c;
+@grey: #8997a8;
 
 .lcw {	
 	margin: auto;
@@ -26,12 +31,66 @@
 	font-family: 'Open Sans', sans-serif;
 	transition: .1s;
 	outline: none !important;
+	-webkit-font-smoothing: antialiased;
+	text-shadow: rgba(0,0,0,.01) 0 0 1px;
 }
 
 h1, h2, h3, h4, h5, h6 {
 	font-family: 'Open Sans Condensed', sans-serif;
 	text-transform: uppercase;
 	font-weight: lighter;
+}
+
+button, input[type="button"], input[type="reset"], input[type="submit"] {
+	border-radius: 0;
+}
+
+button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type="submit"]:hover {
+	box-shadow: none;
+}
+
+.site {
+	overflow: hidden;
+}
+.site-content {
+	transform: translateX(0);
+	&.active {
+		transform: translateX(300px);
+	}
+}
+.site-footer {
+	transform: translateX(0);
+	&.active {
+		transform: translateX(300px);
+	}
+}
+
+.page-header {
+	text-align: center;
+	font-size: 40px;
+	margin: 30px 60px;
+	overflow: hidden;
+	letter-spacing: 1px;
+	span {
+		font-family: 'Open Sans Condensed';
+		padding: 15px;
+		position: relative;	
+		&::before {
+			right: 100%;
+		}
+		&::after {
+			left: 100%;
+		}
+	}
+	span::before, ::after {
+		content: '';
+		display: block;
+		width: 1000px;
+		height: 1px;
+		background: #333;
+		position: absolute;		
+		top: 50%;
+	}
 }
 
 .section-header {
