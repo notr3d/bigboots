@@ -7,19 +7,32 @@
 		padding: 0;
 		margin: 0;
 		list-style: none;
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
 		.menu-item {
-			display: inline-block;
 			a {
 				display: block;
 				padding: 15px;
 				color: #747778;
 				text-decoration: none;
 				text-transform: uppercase;
-				//transition: .1s;
+				text-align: center;
 				&:hover {
-					color: #fff;
+					color: @white;
 				}
 			}
+		}
+		@media @m {
+			flex-direction: column;
+		}
+		@media @t {
+			justify-content: center;
+		}
+		@media @d {
+			justify-content: flex-start;
 		}
 	}
 }

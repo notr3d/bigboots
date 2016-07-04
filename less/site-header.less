@@ -1,72 +1,78 @@
 .site-header {
 	position: fixed;
-	z-index: 100000;
 	top: 0;
 	left: 0;
-	width: 300px;
-	height: 100vh;	
-	transform: translateX(-300px);
-	&.active {
-		transform: translateX(0);
-	}
-	&__wrapper {		
+	width: 100%;
+	z-index: 100000;
+	background: #fff;
+	border-bottom: 1px solid @light-grey;
+	&__wrapper {
 		display: -webkit-flex;
 		display: -moz-flex;
 		display: -ms-flex;
 		display: -o-flex;
 		display: flex;
-		height: 100%;
-		flex-direction: column;
-		background: #fff;
+		width: 100%;
 		position: relative;
-	}	
-	&__open {
-		width: 75px;
-		height: 75px;
-		background: @grey;
-		border: none !important;
-		box-shadow: none !important;
-		box-shadow: none;
-		padding: 0;
-		font-size: 50px;
-		font-weight: lighter;
-		color: #fff;
-		position: absolute;
-		top: 0;
-		left: 100%;
-		text-shadow: none !important;
-		&:hover {
-			background: lighten(@grey, 5%);
-		}
-		&.active {
-			background: none;
-			color: @grey;
-			transform: rotate(45deg);
+		@media @m {
+			flex-direction: column;
 		}
 	}
 	&__menu {
 		padding: 0;
 		margin: 0;
 		list-style: none;
-		margin-bottom: 30px;
-		.menu-item {
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;		
+		justify-content: center;
+		.menu-item {			
 			a {
 				display: block;
-				padding: 15px;
-				text-transform: uppercase;
-				text-decoration: none;
-				letter-spacing: 1px;
-   				font-weight: bold;
-				color: #333;
 				font-family: 'Open Sans Condensed';
-				font-size: 30px;
-				font-weight: lighter;
-				&:hover {
-					background: @grey;
-					color: #fff;
-				}
+				text-transform: uppercase;
+				color: @black;
+				font-size: 26px;
+				text-decoration: none;
+				padding: 15px;
 			}
 		}
+		@media @m {
+			flex-direction: column;
+		}
+	}
+	&__open {
+		width: 75px;
+		height: 75px;
+		background: @grey;
+		color: @white;
+		font-size: 60px;
+		position: absolute;
+		top: 0;
+		left: 100%;
+		padding: 0;
+		border: 1px solid @white;
+		box-shadow: none;
+		@media @d {
+			display: none;
+		}
+		@media @t {
+			display: block;
+		}
+		&.active {
+			background-color: @white;
+			color: @grey;
+		}
+	}
+	@media @m {
+		width: 300px;
+		height: 100vh;
+		transform: translateX(-300px);
+	}
+	&.active {
+		transform: translateX(0);
 	}
 }
 .site-logo {
@@ -80,33 +86,8 @@
 	text-decoration: none;
 	outline: none;
 	height: 75px;
-	border-bottom: 1px solid #ddd;
-	&__img {
-		width: 40px;
-		height: 100%;
-		background: url(img/site-logo.png) no-repeat center;
-		background-size: contain;
-	}
-	&__text {
-		font-family: 'Marcellus', serif;
-		text-transform: uppercase;
-		font-size: 18px;
-	}
-}
-/*.site-logo {
-	width: 160px;
-	height: 100%;
-	display: -webkit-flex;
-	display: -moz-flex;
-	display: -ms-flex;
-	display: -o-flex;
-	display: flex;
-	border-right: 1px solid #ccc;
-	justify-content: center;
-	align-items: center;
-	text-decoration: none;
-	outline: none;
-	padding: 5px;
+	border-right: 1px solid @light-grey;
+	padding-right: 15px;
 	&__img {
 		width: 40px;
 		height: 100%;
@@ -121,15 +102,28 @@
 }
 .site-nav {
 	flex-grow: 1;
-	height: 100%;
-	div {
-		height: 100%;
-	}
 }
 .user-info {
-	height: 100%;
-	border-left: 1px solid #ccc;
-	div {
-		height: 100%;
+	border-left: 1px solid @light-grey;
+}
+
+.site {
+	transform: translateX(0);
+	&.active {
+		transform: translateX(300px);
 	}
-}*/
+	padding-top: 75px;
+	@media @m {
+		padding-top: 0;
+	}
+	min-height: 100vh;
+	display: -webkit-flex;
+	display: -moz-flex;
+	display: -ms-flex;
+	display: -o-flex;
+	display: flex;
+	flex-direction: column;
+	&__wrapper {
+		flex-grow: 1;
+	}
+}

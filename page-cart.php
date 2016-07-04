@@ -1,7 +1,9 @@
 <?php get_header(); ?>
-	<div class="content-area">
-		<main class="my-account">
+<div class="content-area">
+	<main class="my-cart">
+		<div class="my-cart__wrapper lcw">
 			<?php echo do_shortcode( '[woocommerce_cart]' ); ?>
-		</main>
-	</div>
+		</div>
+	</main>
+</div>
 <?php get_footer(); ?>

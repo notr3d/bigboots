@@ -13,25 +13,25 @@
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<div class="site">
-	<header class="site-header">
-		<div class="site-header__wrapper">
-			<a href="home" class="site-logo">
-				<span class="site-logo__img"></span>
-				<span class="site-logo__text">Big boots</span>
-			</a>
-			<?php wp_nav_menu(array(
-				'theme_location' => 'site-nav',
-				'container_class' => 'site-nav',
-				'menu_class' => 'site-header__menu'
-			)); ?>
-			<?php wp_nav_menu(array(
-				'theme_location' => 'user-info',
-				'container_class' => 'user-info',
-				'menu_class' => 'site-header__menu'
-			)); ?>
-			<!--<?php get_search_form(); ?>-->
-			<button class="site-header__open">+</button>
-		</div>
-	</header>
-	<div class="site-content">
+<header class="site-header">
+	<div class="site-header__wrapper">
+		<a href="home" class="site-logo">
+			<span class="site-logo__img"></span>
+			<span class="site-logo__text">Big boots</span>
+		</a>
+		<?php wp_nav_menu(array(
+			'theme_location' => 'site-nav',
+			'container_class' => 'site-nav',
+			'menu_class' => 'site-header__menu'
+		)); ?>
+		<?php wp_nav_menu(array(
+			'theme_location' => 'user-info',
+			'container_class' => 'user-info',
+			'menu_class' => 'site-header__menu'
+		)); ?>
+		<!--<?php get_search_form(); ?>-->			
+		<button class="site-header__open">+</button>
+	</div>
+</header>
+<div class="site">	
+	<div class="site__wrapper">

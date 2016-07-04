@@ -5,14 +5,20 @@
 @import "home.less";
 @import "products.less";
 @import "product.less";
+@import "product-page.less";
+@import "my-account.less";
+@import "my-cart.less";
 @import "contacts.less";
 
 @m: ~ "(max-width: 767px)";
 @t: ~ "(min-width: 768px)";
 @d: ~ "(min-width: 1280px)";
 
-@red: #e44b2c;
+@black: #333;
+@white: #eee;
+@light-grey: #ddd;
 @grey: #8997a8;
+@red: #e44b2c;
 
 .lcw {	
 	margin: auto;
@@ -49,22 +55,6 @@ button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type=
 	box-shadow: none;
 }
 
-.site {
-	overflow: hidden;
-}
-.site-content {
-	transform: translateX(0);
-	&.active {
-		transform: translateX(300px);
-	}
-}
-.site-footer {
-	transform: translateX(0);
-	&.active {
-		transform: translateX(300px);
-	}
-}
-
 .page-header {
 	text-align: center;
 	font-size: 40px;
@@ -99,17 +89,24 @@ button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type=
 }
 
 .prod-cat {
+	margin-bottom: 30px;
 	&__container {
 		display: -webkit-flex;
 		display: -moz-flex;
 		display: -ms-flex;
 		display: -o-flex;
 		display: flex;
+		flex-wrap: wrap;
 	}
 	&__item {
-		flex-basis: 50%;
 		height: 360px;
 		padding: 7.5px;
+		@media @m {
+			flex-basis: 100%;
+		}
+		@media @t {			
+			flex-basis: 50%;
+		}
 	}
 	&__link {
 		display: block;
@@ -156,4 +153,8 @@ button:hover, input[type="button"]:hover, input[type="reset"]:hover, input[type=
 		padding: 10px 5px;
 		border: 1px solid #333;
 	}
+}
+.woocommerce-message {
+	background: #eee;
+	border: 1px solid #ddd;
 }

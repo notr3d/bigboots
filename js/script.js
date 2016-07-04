@@ -12,10 +12,10 @@ $(document).ready(function(){
 	siteMenuBtn.click(function(){
 		var headerCon = $('.site-header');
 		headerCon.toggleClass('active');
-		var siteCon = $('.site-content');
+		
+		var siteCon = $('.site');
 		siteCon.toggleClass('active');
-		var footerCon = $('.site-footer');
-		footerCon.toggleClass('active');
+		
 		$(this).toggleClass('active');
 	});
 });
