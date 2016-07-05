@@ -139,7 +139,9 @@ require get_template_directory() . '/inc/customizer.php';
  */
 require get_template_directory() . '/inc/jetpack.php';
 
-//регистрируем меню
+//пишем все сюда---------------------------------------------------
+
+//регистрируем все меню
 function register_menus() {
   register_nav_menus(
     array(
@@ -151,3 +153,23 @@ function register_menus() {
 }
 add_action( 'init', 'register_menus' );
 
+//вукоммерс стили убираем
+add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
+
+//меняем разделитель в хлебных крошках на знак "больше"
+add_filter( 'woocommerce_breadcrumb_defaults', 'jk_change_breadcrumb_delimiter' );
+function jk_change_breadcrumb_delimiter( $defaults ) {
+	$defaults['delimiter'] = ' &gt; ';
+	return $defaults;
+}
+
+add_filter('woocommerce_currency_symbol', 'change_existing_currency_symbol', 10, 2);
+
+//рубль
+function change_existing_currency_symbol( $currency_symbol, $currency ) {
+	switch( $currency ) {
+		case 'RUB': $currency_symbol = 'руб.'; 
+		break;
+	}
+	return $currency_symbol;
+}

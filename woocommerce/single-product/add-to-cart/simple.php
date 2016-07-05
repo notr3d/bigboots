@@ -31,7 +31,7 @@ if ( ! $product->is_purchasable() ) {
 <?php
 	// Availability
 	$availability      = $product->get_availability();
-	$availability_html = empty( $availability['availability'] ) ? '' : '<p class="stock ' . esc_attr( $availability['class'] ) . '">' . esc_html( $availability['availability'] ) . '</p>';
+	$availability_html = empty( $availability['availability'] ) ? '' : '<p class="single-product__stock single-product__stock--' . esc_attr( $availability['class'] ) . '">' . esc_html( $availability['availability'] ) . '</p>';
 
 	echo apply_filters( 'woocommerce_stock_html', $availability_html, $availability['availability'], $product );
 ?>
@@ -40,7 +40,7 @@ if ( ! $product->is_purchasable() ) {
 
 	<?php do_action( 'woocommerce_before_add_to_cart_form' ); ?>
 
-	<form class="cart" method="post" enctype='multipart/form-data'>
+	<form class="single-product__form" method="post" enctype='multipart/form-data'>
 	 	<?php do_action( 'woocommerce_before_add_to_cart_button' ); ?>
 
 	 	<?php

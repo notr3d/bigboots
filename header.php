@@ -29,7 +29,8 @@
 			'container_class' => 'user-info',
 			'menu_class' => 'site-header__menu'
 		)); ?>
-		<!--<?php get_search_form(); ?>-->			
+		<?php //get_search_form(); ?>	
+		<?php //woocommerce_mini_cart(); ?>		
 		<button class="site-header__open">+</button>
 	</div>
 </header>

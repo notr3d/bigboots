@@ -1,0 +1,41 @@
+.woocommerce {
+	&-result-count {
+		width: 100%;
+		text-align: center;
+	}
+	&-ordering {
+		width: 100%;
+		text-align: center;
+		select {
+			padding: 10px 5px;
+			border: 1px solid #333;
+		}
+	}
+	&-message {
+		border: 1px solid #ddd;
+		margin: 15px 0;
+		padding: 15px;
+		background: green;
+		color: @white;
+		position: relative;
+		.wc-forward {
+			float: right;
+			color: @white;
+			text-decoration: none;
+			font-weight: bold;
+			display: inline-block;
+			border-left: 1px solid @white;
+			padding-left: 15px;
+			&::after {
+				content: ' →';
+			}
+		}
+	}
+	&-breadcrumb {
+		margin-bottom: 15px;
+		a {
+			text-decoration: none;
+			color: #c7c7c7;
+		}
+	}
+}

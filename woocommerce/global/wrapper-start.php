@@ -42,7 +42,7 @@ switch( $template ) {
 		echo '<div id="primary" class="content-area twentysixteen"><main id="main" class="site-main" role="main">';
 		break;
 	case 'bigboots' :
-		echo '<div class="product-page"><div class="product-page__wrapper lcw">';
+		echo '<div class="page-content"><div class="page-content__wrapper lcw">';
 		break;
 	default :
 		echo '<div id="container"><div id="content" role="main">';
