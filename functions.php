@@ -173,3 +173,31 @@ function change_existing_currency_symbol( $currency_symbol, $currency ) {
 	}
 	return $currency_symbol;
 }
+
+//cart widget
+function arphabet_widgets_init() {
+	register_sidebar( array(
+		'name' => 'Mini Cart',
+		'id' => 'wc_dropdown_cart',
+		'before_widget' => '',
+		'after_widget' => '',
+		'before_title' => '',
+		'after_title' => '',
+	) );
+}
+add_action( 'widgets_init', 'arphabet_widgets_init' );
+
+//cart items number
+add_filter( 'woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment' );
+function woocommerce_header_add_to_cart_fragment( $fragments ) {
+	ob_start();
+	?>
+	<span class="mini-cart__contents">
+		<?php echo sprintf (_n( '%d', WC()->cart->get_cart_contents_count() ) ); ?> 
+	</span> 
+	<?php
+	
+	$fragments['span.mini-cart__contents'] = ob_get_clean();
+	
+	return $fragments;
+}

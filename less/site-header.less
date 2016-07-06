@@ -27,18 +27,7 @@
 		display: -ms-flex;
 		display: -o-flex;
 		display: flex;		
-		justify-content: center;
-		.menu-item {			
-			a {
-				display: block;
-				font-family: 'Open Sans Condensed';
-				text-transform: uppercase;
-				color: @black;
-				font-size: 26px;
-				text-decoration: none;
-				padding: 15px;
-			}
-		}
+		justify-content: center;		
 		@media @m {
 			flex-direction: column;
 		}
@@ -73,6 +62,17 @@
 	}
 	&.active {
 		transform: translateX(0);
+	}
+	.menu-item {			
+		a {
+			display: block;
+			font-family: 'Open Sans Condensed';
+			text-transform: uppercase;
+			color: @black;
+			font-size: 26px;
+			text-decoration: none;
+			padding: 15px;
+		}
 	}
 }
 .site-logo {

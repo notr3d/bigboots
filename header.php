@@ -28,9 +28,14 @@
 			'theme_location' => 'user-info',
 			'container_class' => 'user-info',
 			'menu_class' => 'site-header__menu'
-		)); ?>
-		<?php //get_search_form(); ?>	
-		<?php //woocommerce_mini_cart(); ?>		
+		)); ?>	
+		</a>
+		<div class="mini-cart">
+		 	<a href="cart" class="mini-cart__link">Корзина<span class="mini-cart__contents"></span></a>		 	
+		 	<div class="mini-cart__wrapper">
+		 		<?php dynamic_sidebar('wc_dropdown_cart'); ?>
+		 	</div>
+		 </div>
 		<button class="site-header__open">+</button>
 	</div>
 </header>

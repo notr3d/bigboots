@@ -1,11 +1,134 @@
-.mini-cart {
-	position: absolute;
-	right: 0;
-	top: 75px;
-	background: #000;
-		list-style: none;
-		margin: 0;
-		padding: 0;
-	padding: 15px;
-	color: @white;
+.mini-cart {	
+	&__link {
+		display: block;
+		font-family: 'Open Sans Condensed';
+		text-transform: uppercase;
+		color: @black;
+		font-size: 26px;
+		text-decoration: none;
+		padding: 15px;
+		height: 45px;
+		position: relative;
+		&:hover {
+			& + div {
+				display: block;			
+			}
+		}
+	}
+	&__contents {
+		position: absolute;
+		top: 0;
+		right: 0;
+		font-size: 12px;
+		display: inline-block;
+		padding: 5px;
+		background: red;
+		border-radius: 50%;
+		height: 12px;
+		width: 12px;
+		text-align: center;
+		line-height: 12px;
+		color: white;
+	}
+	&__wrapper {
+		position: absolute;
+		top: 75px;
+		right: 0;
+		padding: 15px;
+		background: @white;
+		border: 1px solid @light-grey;
+		display: none;
+		a {
+			text-decoration: none;
+			color: @black;
+			text-transform: uppercase;
+		}
+		&:hover {
+			display: block;
+		}
+		@media @m {
+			display: block;
+			position: static;
+		}
+	}
+	&__item {
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		align-items: center;
+		position: relative;
+		&:not(:last-of-type) {
+			padding-bottom: 15px;
+			border-bottom: 1px solid @light-grey;
+			margin-bottom: 15px;
+		}
+		&:hover {
+			.mini-cart__remove {
+				opacity: 1;
+			}
+		}
+	}
+	&__remove {
+		font-size: 18px;
+		line-height: 18px;
+		width: 18px;
+		height: 18px;
+		border: 1px solid @black;
+		border-radius: 50%;
+		text-align: center;
+		color: @black;
+		position: absolute;
+		top: -9px;
+		left: -9px;
+		background: @white;
+		opacity: 0;
+		&:hover {
+			border-color: @red;
+			background-color: @red;
+			color: @white;
+		}
+	}
+	&__preview {
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		align-items: center;
+		margin-right: 15px;
+		img {
+			width: 90px;
+			height: 60px;
+			margin-right: 15px;
+		}
+	}
+	&__quantity {
+		margin-left: auto;
+	}
+	&__total {
+		text-align: right;
+		margin: 15px 0;
+	}
+	&__buttons {
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		justify-content: flex-end;
+		a {
+			border: 1px solid @black;
+			padding: 15px;
+			margin-left: 15px;
+		}
+	}
+	&__empty {
+		span {
+			margin-left: 15px;
+			display: inline-block;
+			transform: rotate(90deg);
+		}
+	}
 }
